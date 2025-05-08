@@ -1,0 +1,5 @@
+/* Custom margin for the main content area */
+.main-content {
+    margin-left: 30px;  /* margin kiri */
+    margin-right: 30px; /* margin kanan */
+}
