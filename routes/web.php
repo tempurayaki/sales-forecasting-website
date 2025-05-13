@@ -1,7 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\SalesForecastController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +23,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/forecast', [SalesForecastController::class, 'index'])->name('forecast');
+Route::post('/forecast', [SalesForecastController::class, 'forecast'])->name('sales.forecast');
 
 
 Route::prefix('sales')->group(function () {
