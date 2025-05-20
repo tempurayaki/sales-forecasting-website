@@ -17,16 +17,19 @@ use App\Http\Controllers\SalesForecastController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth/login');
-});
+// Route::get('/', function () {
+//     return view('dashboard.index');
+// });
+
+Route::redirect('/', '/home', 301); // Redirect permanen
 
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/forecast', [SalesForecastController::class, 'index'])->name('forecast');
-Route::post('/forecast', [SalesForecastController::class, 'forecast'])->name('sales.forecast');
+// Route untuk halaman forecasting
+Route::get('/forecasting', [SalesForecastController::class, 'index'])->name('forecasting');
+Route::post('/forecasting/get-forecast', [SalesForecastController::class, 'getForecast'])->name('forecasting.get-forecast');
 
 
 Route::prefix('sales')->group(function () {

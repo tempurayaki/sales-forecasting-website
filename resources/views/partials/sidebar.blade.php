@@ -21,7 +21,7 @@
         </a>
       </li>  
       <li class="nav-item">
-        <a class="nav-link d-flex align-items-center text-dark gap-2" href="{{ route('forecast') }}">
+        <a class="nav-link d-flex align-items-center text-dark gap-2" href="{{ route('forecasting') }}">
           <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
             <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-chart-line') }}"></use>
           </svg>
