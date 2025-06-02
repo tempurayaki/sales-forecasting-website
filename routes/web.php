@@ -30,6 +30,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Route untuk halaman forecasting
 Route::get('/forecasting', [SalesForecastController::class, 'index'])->name('forecasting');
 Route::post('/forecasting/get-forecast', [SalesForecastController::class, 'getForecast'])->name('forecasting.get-forecast');
+Route::get('/forecasting/export/excel', [SalesForecastController::class, 'exportExcel'])->name('forecast.export.excel');
+Route::get('/forecasting/export/csv', [SalesForecastController::class, 'exportCsv'])->name('forecast.export.csv');
+Route::get('/forecasting/generate-report', [SalesForecastController::class, 'generateForecastReport'])->name('forecast.generate-report');
 
 
 Route::prefix('sales')->group(function () {
