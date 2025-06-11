@@ -11,40 +11,10 @@
     <!-- Option 2: CoreUI PRO for Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.12.0/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-YVHwdj+EKSu6ocFP4DVxSkyLgrlsMf1FJPLZhInu09UMMLHWv0meKLveWYKOHgq9" crossorigin="anonymous"> -->
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <style>
-        
-        /* Mengubah warna latar belakang dan border pagination item yang aktif */
-        .card-footer .page-item.active .page-link {
-            background-color: #0f0d13;
-            border-color: #0f0d13;
-            color: white;
-        }
-
-        /* Menambahkan efek hover pada pagination item */
-        .card-footer .page-link:hover {
-            background-color: #646464;
-            border-color: #646464;
-        }
-
-        /* Styling untuk pagination item yang non-aktif */
-        .card-footer .page-item .page-link {
-            background-color: #f8f9fa;
-            border-color: #dee2e6;
-            color: #6c757d;
-        }
-
-        /* Styling saat hover untuk pagination item non-aktif */
-        .card-footer .page-item:not(.active) .page-link:hover {
-            background-color: #e2e6ea;
-            border-color: #dae0e5;
-            color: black;
-        }
-    </style>
+    <title>@yield('title') | Sistem Peramalan Penjualan</title>
 
   </head>
-  <body class="" style="background-color: #f7c6d1;">
+  <body class="" style="background-color: white;">
     <div class="d-flex">
         <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 p-0">

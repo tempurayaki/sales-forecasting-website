@@ -1,3 +1,5 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 /* Custom margin for the main content area */
 .main-content {
     margin-left: 30px;  /* margin kiri */

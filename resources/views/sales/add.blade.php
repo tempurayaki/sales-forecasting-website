@@ -7,8 +7,8 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <a class="btn btn-outline-dark" href="{{ route('sales') }}">
-                <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
+            <a class="btn btn-primary" href="{{ route('sales') }}">
+                <svg width="20" height="20" fill="currentColor">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-arrow-left') }}"></use>
                 </svg>
             </a>
@@ -77,8 +77,8 @@
 
                 <div class="row mb-3">
                     <div class="col-md-9 m-auto text-end">
-                        <button type="submit" class="btn btn-dark">Tambah</button>
-                        <a href="{{ route('sales') }}" class="btn btn-outline-dark">Batal</a>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                        <a href="{{ route('sales') }}" class="btn btn-outline-primary">Batal</a>
                     </div>
                 </div>
 

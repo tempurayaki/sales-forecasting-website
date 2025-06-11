@@ -6,8 +6,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <a class="btn btn-dark" href="{{ route('sales') }}">
-                    <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
+                <a class="btn btn-primary" href="{{ route('sales') }}">
+                    <svg width="20" height="20" fill="currentColor">
                         <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-arrow-left') }}"></use>
                     </svg>
                 </a>
@@ -35,7 +35,7 @@
                                 <input type="file" name="excel_file" id="excel_file" class="form-control" required>
                             </div>
 
-                            <button type="submit" class="btn btn-dark mt-3">Import</button>
+                            <button type="submit" class="btn btn-primary mt-3">Import</button>
                         </form>
                     </div>
                 </div>

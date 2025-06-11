@@ -14,7 +14,7 @@
             </a>            
         </div>
         <div class="mx-3">
-            <a href="{{ route('sales.upload') }}" class="btn btn-dark text-light ml-1">
+            <a href="{{ route('sales.upload') }}" class="btn btn-primary text-light ml-1">
                 <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-data-transfer-up') }}"></use>
                 </svg>

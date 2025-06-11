@@ -38,7 +38,10 @@
                     
                     <!-- Export Button -->
                     <div class="col-md-3" id="exportButtons" style="display: none;">
-                        <button type="button" class="btn btn-success w-100" onclick="exportCurrentForecast('excel')">
+                        <button type="button" class="btn btn-success text-white w-100" onclick="exportCurrentForecast('excel')">
+                            <svg width="20" height="20" fill="currentColor">
+                                <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-data-transfer-down') }}"></use>
+                            </svg>
                             <i class="fas fa-file-excel"></i> Export Excel
                         </button>
                     </div>
