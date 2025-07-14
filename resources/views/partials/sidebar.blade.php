@@ -141,9 +141,9 @@
   }
   
   .btn-logout {
-    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    background: white;
     border: none;
-    color: white;
+    color: black;
     padding: 0.75rem 1rem;
     border-radius: 8px;
     font-weight: 500;
@@ -177,6 +177,7 @@
   </div>
   
   <ul class="sidebar-nav flex-grow-1">
+    {{-- Dashboard - Accessible by both admin and user --}}
     <li class="nav-item">
       <a class="nav-link d-flex align-items-center text-dark gap-2 {{ Request::routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
         <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
@@ -188,15 +189,7 @@
     
     <li class="nav-title">Menu</li>
     
-    <li class="nav-item">
-      <a class="nav-link d-flex align-items-center text-dark gap-2 {{ Request::routeIs('sales') ? 'active' : '' }}" href="{{ route('sales') }}">
-        <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
-          <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-view-column') }}"></use>
-        </svg>
-        Data Penjualan
-      </a>
-    </li>  
-    
+    {{-- Peramalan Penjualan - Accessible by both admin and user --}}
     <li class="nav-item">
       <a class="nav-link d-flex align-items-center text-dark gap-2 {{ Request::routeIs('forecasting') ? 'active' : '' }}" href="{{ route('forecasting') }}">
         <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
@@ -205,10 +198,35 @@
         Peramalan Penjualan
       </a>
     </li>  
+
+    {{-- Admin Section - Only for admin --}}
+    @can('admin-access')
+    <li class="nav-title">Admin</li>
+
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center text-dark gap-2 {{ Request::routeIs('sales') ? 'active' : '' }}" href="{{ route('sales') }}">
+        <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
+          <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-view-column') }}"></use>
+        </svg>
+        Data Penjualan
+      </a>
+    </li> 
+    
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center text-dark gap-2 {{ Request::routeIs('admin.users.*') ? 'active' : '' }}" href="{{ route('admin.users.index') }}">
+        <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
+          <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-user') }}"></use>
+        </svg>
+        Kelola User
+      </a>
+    </li>
+    @endcan
   </ul>
+
+  
   
   <div class="sidebar-footer border-top d-flex justify-content-center align-items-center p-3">
-    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 w-100">
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 w-100">
       @csrf
       <button type="submit" class="btn btn-logout d-flex align-items-center justify-content-center gap-2" title="Logout">
         <svg class="c-sidebar-nav-icon" width="20" height="20" fill="currentColor">
@@ -216,6 +234,6 @@
         </svg>
         <span>Logout</span>
       </button>
-    </form> --}}
+    </form>
   </div>
 </div>

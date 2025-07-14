@@ -15,6 +15,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "laravel/breeze": "^1.29",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
@@ -27,7 +28,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/AdminHelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -39,8 +43,12 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
+        "post-install-cmd": [
+            "php artisan admin:setup"
+        ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "php artisan admin:setup"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
