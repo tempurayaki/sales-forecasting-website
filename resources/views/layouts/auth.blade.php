@@ -11,7 +11,7 @@
     <!-- Option 2: CoreUI PRO for Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.12.0/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-YVHwdj+EKSu6ocFP4DVxSkyLgrlsMf1FJPLZhInu09UMMLHWv0meKLveWYKOHgq9" crossorigin="anonymous"> -->
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | Sistem Peramalan Penjualan</title>
   </head>
   <body>
     <div class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
